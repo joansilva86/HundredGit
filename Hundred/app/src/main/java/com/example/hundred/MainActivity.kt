@@ -6,10 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(),MainView {
-    override fun ShowList(list: ArrayList<Item>) {
-        lista.layoutManager = LinearLayoutManager(this)
-        lista.adapter = AdapterCustom(list)
-    }
+
+    private val presenter = MainPresenter()
 
     override fun onPause() {
         super.onPause()
@@ -30,9 +28,10 @@ class MainActivity : AppCompatActivity(),MainView {
         presenter.detach()
     }
 
-    private val presenter = MainPresenter()
 
-
+    override fun ShowList(list: ArrayList<Item>) {
+        (recycler.adapter as AdapterCustom).list = list
+    }
 
     override fun ShowError() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -41,5 +40,7 @@ class MainActivity : AppCompatActivity(),MainView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        recycler.layoutManager = LinearLayoutManager(this)
+        recycler.adapter = AdapterCustom()
     }
 }

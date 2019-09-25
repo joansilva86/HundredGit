@@ -7,8 +7,14 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_template_recycler.view.*
 
 
-class AdapterCustom(private var list: ArrayList<Item>) :
+class AdapterCustom() :
     RecyclerView.Adapter<AdapterCustom.ViewHolderCustom>() {
+
+    var list:List<Item> = ArrayList()
+        set(value) {
+            field = value
+            this.notifyDataSetChanged()
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderCustom {
         var view = LayoutInflater.from(parent.context)
