@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity(),MainView {
 
     override fun onResume() {
         super.onResume()
-        presenter.begin()
+        presenter.getMovies(this)
     }
 
     override fun onStart() {
