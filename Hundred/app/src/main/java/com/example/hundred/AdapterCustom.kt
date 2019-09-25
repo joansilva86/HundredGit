@@ -4,10 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.toolbox.ImageLoader
 import kotlinx.android.synthetic.main.item_template_recycler.view.*
 
 
-class AdapterCustom() :
+class AdapterCustom (val imageLoader: ImageLoader) :
     RecyclerView.Adapter<AdapterCustom.ViewHolderCustom>() {
 
     var list:List<Item> = ArrayList()
@@ -27,14 +28,14 @@ class AdapterCustom() :
     }
 
     override fun onBindViewHolder(holder: ViewHolderCustom, position: Int) {
-        holder.bind(list[position])
+        holder.bind(list[position],imageLoader)
     }
 
     class ViewHolderCustom(private var view: View) : RecyclerView.ViewHolder(view) {
-        fun bind(item: Item) {
-            this.view.txtFirst.text = item.one
-            this.view.txtSecond.text = item.two
-            this.view.txtThree.text = item.three
+        fun bind(item: Item,imageLoader: ImageLoader) {
+            this.view.lblAuthor.text = item.author
+            this.view.lblTitle.text = item.title
+            this.view.imgPic.setImageUrl(item.imageUrl,imageLoader)
         }
     }
 

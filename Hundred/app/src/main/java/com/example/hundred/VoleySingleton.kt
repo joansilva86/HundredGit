@@ -19,7 +19,7 @@ class VolleySingleton private constructor(context: Context) {
     val imageLoader: ImageLoader
     val requestQueue: RequestQueue
         get() {
-            if (mRequestQueue == null) {//esto es lo primero que necesito
+            if (mRequestQueue == null) {
                 mRequestQueue = Volley.newRequestQueue(mCtx?.applicationContext)
             }
             return this!!.mRequestQueue!!

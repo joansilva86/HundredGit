@@ -41,6 +41,6 @@ class MainActivity : AppCompatActivity(),MainView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         recycler.layoutManager = LinearLayoutManager(this)
-        recycler.adapter = AdapterCustom()
+        recycler.adapter = AdapterCustom(VolleySingleton.getInstance(this).imageLoader)
     }
 }

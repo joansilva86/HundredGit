@@ -14,15 +14,7 @@ class MainPresenter {
     fun detach() {
         this.view = null
     }
-    /*fun begin(){
-        list.add( Item("asdfsad","fas","fsdadfsaasdf"))
-        list.add( Item("asdfsad","fas","fsdadfsaasdf"))
-        list.add( Item("asdfsad","fas","fsdadfsaasdf"))
-        list.add( Item("asdfsad","fas","fsdadfsaasdf"))
-        list.add( Item("asdfsad","fas","fsdadfsaasdf"))
-        getMovies(this)
-        view.showList(list)
-    }*/
+
     fun getMovies(context: Context){
         MovieService().getMovies(context,onResponseListener,onServiceError)
     }
