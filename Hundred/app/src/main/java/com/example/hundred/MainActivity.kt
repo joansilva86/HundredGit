@@ -29,11 +29,11 @@ class MainActivity : AppCompatActivity(),MainView {
     }
 
 
-    override fun ShowList(list: ArrayList<Item>) {
+    override fun showList(list: ArrayList<Item>) {
         (recycler.adapter as AdapterCustom).list = list
     }
 
-    override fun ShowError() {
+    override fun showError() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
