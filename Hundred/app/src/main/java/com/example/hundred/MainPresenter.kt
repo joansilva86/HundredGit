@@ -23,5 +23,5 @@ class MainPresenter {
 
 interface MainView {
     fun ShowError()
-    fun ShowList(var list: ArrayList<Item>)
+    fun ShowList(list: ArrayList<Item>)
 }

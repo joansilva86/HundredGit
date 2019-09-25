@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(),MainView {
-    override fun ShowList(var list: ArrayList<Item>) {
+    override fun ShowList(list: ArrayList<Item>) {
         lista.layoutManager = LinearLayoutManager(this)
-        lista.adapter = CustomAdapter(list)
+        lista.adapter = AdapterCustom(list)
     }
 
     override fun onPause() {
